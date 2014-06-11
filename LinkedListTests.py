@@ -18,18 +18,22 @@ class add_and_count_get_tests(unittest.TestCase):
         linked_list.add('test item 1')
         self.assertEqual(linked_list.count, 2)
 
-    def test_when_adding_item_should_be_able_to_get_it_back(self):
-        linked_list = LinkedList()
-        linked_list.add('test item 0')
-        item_from_list = linked_list.get_last()
-        self.assertEqual(item_from_list.value, 'test item 0')
-
     def test_when_adding_several_items_should_be_able_to_get_last_one(self):
         linked_list = LinkedList()
         linked_list.add('test item 0')
         linked_list.add('test item 1')
         item_from_list = linked_list.get_last()
         self.assertEqual(item_from_list.value, 'test item 1')
+
+    def test_when_one_item_has_been_added_it_should_be_returned_as_last_one(self):
+        linked_list = LinkedList()
+        linked_list.add('test item 0')
+        self.assertEqual(linked_list.get_last().value, 'test item 0')
+
+    def test_when_one_item_has_been_added_it_should_be_returned_as_first_one(self):
+        linked_list = LinkedList()
+        linked_list.add('test item 0')
+        self.assertEqual(linked_list.get_first().value, 'test item 0')
 
     def test_when_adding_several_items_should_be_able_to_get_first_one(self):
         linked_list = LinkedList()
