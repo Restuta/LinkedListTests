@@ -37,13 +37,35 @@ class add_get_tests(unittest.TestCase):
         item_from_list = linked_list.get(2)
         self.assertEqual(item_from_list.value, 'test item 2')
 
+    def test_when_adding_several_items_should_be_able_to_get_first_item_by_index(self):
+        linked_list = LinkedList()
+        linked_list.add('test item 0')
+        linked_list.add('test item 1')
+        linked_list.add('test item 2')
+        linked_list.add('test item 3')
+        item_from_list = linked_list.get(0)
+        self.assertEqual(item_from_list.value, 'test item 0')
+
+    def test_when_adding_several_items_should_be_able_to_get_last_item_by_index(self):
+        linked_list = LinkedList()
+        linked_list.add('test item 0')
+        linked_list.add('test item 1')
+        linked_list.add('test item 2')
+        linked_list.add('test item 3')
+        item_from_list = linked_list.get(linked_list.count - 1)
+        self.assertEqual(item_from_list.value, 'test item 3')
+
 class count_tests(unittest.TestCase):
-    def test_when_one_item_has_been_added_should_return_count_equal_to_one(self):
+    def test_when_no_items_has_been_added_should_return_count_equal_to_0(self):
+        linked_list = LinkedList()
+        self.assertEqual(linked_list.count, 0)
+
+    def test_when_one_item_has_been_added_should_return_count_equal_to_1(self):
         linked_list = LinkedList()
         linked_list.add('test item 0')
         self.assertEqual(linked_list.count, 1)
 
-    def test_when_two_items_have_been_added_should_return_count_equal_to_two(self):
+    def test_when_two_items_have_been_added_should_return_count_equal_to_2(self):
         linked_list = LinkedList()
         linked_list.add('test item 0')
         linked_list.add('test item 1')
