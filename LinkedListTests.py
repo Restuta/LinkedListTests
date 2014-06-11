@@ -2,22 +2,7 @@ import unittest
 from LinkedList import *
 
 #todo: add tests to make sure class impelement iterators (so it can be enumerated through for loop: https://docs.python.org/2/tutorial/classes.html#iterators)
-
-class add_and_count_get_tests(unittest.TestCase):
-    def setUp(self):
-        pass
-
-    def test_when_one_item_has_been_added_should_return_count_equal_to_one(self):
-        linked_list = LinkedList()
-        linked_list.add('test item 0')
-        self.assertEqual(linked_list.count, 1)
-
-    def test_when_two_items_have_been_added_should_return_count_equal_to_two(self):
-        linked_list = LinkedList()
-        linked_list.add('test item 0')
-        linked_list.add('test item 1')
-        self.assertEqual(linked_list.count, 2)
-
+class get_first_and_get_last_tests(unittest.TestCase):
     def test_when_adding_several_items_should_be_able_to_get_last_one(self):
         linked_list = LinkedList()
         linked_list.add('test item 0')
@@ -42,6 +27,7 @@ class add_and_count_get_tests(unittest.TestCase):
         item_from_list = linked_list.get(0)
         self.assertEqual(item_from_list.value, 'test item 0')
 
+class add_get_tests(unittest.TestCase):
     def test_when_adding_several_items_should_be_able_to_get_arbitrary_item_by_index(self):
         linked_list = LinkedList()
         linked_list.add('test item 0')
@@ -50,6 +36,18 @@ class add_and_count_get_tests(unittest.TestCase):
         linked_list.add('test item 3')
         item_from_list = linked_list.get(2)
         self.assertEqual(item_from_list.value, 'test item 2')
+
+class count_tests(unittest.TestCase):
+    def test_when_one_item_has_been_added_should_return_count_equal_to_one(self):
+        linked_list = LinkedList()
+        linked_list.add('test item 0')
+        self.assertEqual(linked_list.count, 1)
+
+    def test_when_two_items_have_been_added_should_return_count_equal_to_two(self):
+        linked_list = LinkedList()
+        linked_list.add('test item 0')
+        linked_list.add('test item 1')
+        self.assertEqual(linked_list.count, 2)
 
 class remove_tests(unittest.TestCase):
     def test__remove__when_one_item_have_been_added_and_then_removed_then_count_should_be_0(self):
