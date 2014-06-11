@@ -1,11 +1,9 @@
 import unittest
 from LinkedList import *
 
-
-
 #todo: add tests to make sure class impelement iterators (so it can be enumerated through for loop: https://docs.python.org/2/tutorial/classes.html#iterators)
 
-class LinkedListTests(unittest.TestCase):
+class add_and_count_tests(unittest.TestCase):
     def setUp(self):
         pass
 
@@ -49,7 +47,8 @@ class LinkedListTests(unittest.TestCase):
         item_from_list = linked_list.get(2)
         self.assertEqual(item_from_list, 'test item 2')
 
-    def test_when_one_item_have_been_added_and_then_removed_then_count_should_be_0(self):
+class remove_tests(unittest.TestCase):
+    def test__remove__when_one_item_have_been_added_and_then_removed_then_count_should_be_0(self):
         linked_list = LinkedList()
         linked_list.add('test item 0')
         linked_list.remove(0)
