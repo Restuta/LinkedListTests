@@ -35,8 +35,8 @@ class add_get_tests(unittest.TestCase):
         linked_list.add('test item 1')
         linked_list.add('test item 2')
         linked_list.add('test item 3')
-        item_from_list = linked_list.get(2)
-        self.assertEqual(item_from_list.value, 'test item 2')
+        node = linked_list.get(2)
+        self.assertEqual(node.value, 'test item 2')
 
     def test_when_adding_several_items_should_be_able_to_get_first_node_by_index(self):
         linked_list = LinkedList()
