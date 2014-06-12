@@ -81,7 +81,7 @@ class remove_tests(unittest.TestCase):
         linked_list.remove(0)
         self.assertEqual(linked_list.count, 0)
 
-    def test_when_3_items_have_been_added_and_last_one_removed_then__get_last__should_return_second_item(self):
+    def test_when_3_items_have_been_added_and_last_one_removed_then__get_last__should_return_second_item_with_no_next_node(self):
         linked_list = LinkedList()
         linked_list.add('test item 0')
         linked_list.add('test item 1')
@@ -89,6 +89,7 @@ class remove_tests(unittest.TestCase):
         linked_list.remove(2)
         last_node = linked_list.get_last()
         self.assertEqual(last_node.value, 'test item 1')
+        self.assertIsNone(last_node.next_node)
 
     def test_when_3_items_have_been_added_and_then_middle_item_removed_then__get_last__should_return_third_node_with_no_next_node(self):
         linked_list = LinkedList()
@@ -100,6 +101,15 @@ class remove_tests(unittest.TestCase):
         self.assertEqual(last_node.value, 'test item 2')
         self.assertIsNone(last_node.next_node)
 
+    def test_when_3_items_have_been_added_and_then_middle_item_removed_then_first_item_should_point_to_third_one(self):
+        linked_list = LinkedList()
+        linked_list.add('test item 0')
+        linked_list.add('test item 1')
+        linked_list.add('test item 2')
+        linked_list.remove(1)
+
+        first_node = linked_list.get_first()
+        self.assertEqual(first_node.next_node.value, 'test item 2')
 
 if __name__ == '__main__':
     unittest.main()
