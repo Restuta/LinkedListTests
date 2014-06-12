@@ -111,5 +111,28 @@ class remove_tests(unittest.TestCase):
         first_node = linked_list.get_first()
         self.assertEqual(first_node.next_node.value, 'test item 2')
 
+    def test_when_3_items_have_been_added_and_then_first_item_removed_3_times_count_should_be_0(self):
+        linked_list = LinkedList()
+        linked_list.add('test item 0')
+        linked_list.add('test item 1')
+        linked_list.add('test item 2')
+        linked_list.remove(0)
+        linked_list.remove(0)
+        linked_list.remove(0)
+        self.assertEqual(linked_list.count, 0)
+
+    def test_when_1_item_have_been_added_and_removed_then_first_item_should_not_be_present(self):
+        linked_list = LinkedList()
+        linked_list.add('test item 0')
+        linked_list.remove(0)
+        self.assertIsNone(linked_list.get_first())
+
+    def test_when_1_item_have_been_added_and_removed_then_last_item_should_not_be_present(self):
+        linked_list = LinkedList()
+        linked_list.add('test item 0')
+        linked_list.remove(0)
+        self.assertIsNone(linked_list.get_last())
+
+
 if __name__ == '__main__':
     unittest.main()
