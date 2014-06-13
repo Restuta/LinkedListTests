@@ -24,7 +24,7 @@ class get_first_and_get_last_tests(unittest.TestCase):
         linked_list = LinkedList()
         linked_list.add('test item 0')
         linked_list.add('test item 1')
-        first_node = linked_list.get(0)
+        first_node = linked_list.get_first()
         self.assertEqual(first_node.value, 'test item 0')
 
 
