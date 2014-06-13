@@ -29,6 +29,15 @@ class get_first_and_get_last_tests(unittest.TestCase):
 
 
 class add_get_tests(unittest.TestCase):
+    def test_when_adding_second_element_previous_one_should_point_to_it(self):
+        linked_list = LinkedList()
+        linked_list.add('test item 0')
+        first_node = linked_list.get(0)
+
+        linked_list.add('test item 1')
+
+        self.assertEqual(first_node.next_node, linked_list.get_last())
+
     def test_when_adding_several_items_should_be_able_to_get_arbitrary_node_by_index(self):
         linked_list = LinkedList()
         linked_list.add('test item 0')
