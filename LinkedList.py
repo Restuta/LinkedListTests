@@ -15,7 +15,22 @@ class Node:
     def __repr__(self):
         return '%s' % self.value
 
+class LinkedList:
+    last_node = None
+    first_node = None
+    def add(self, new_nodes_value):
+        if self.last_node is None:
+            self.last_node = Node(new_nodes_value)
+            self.first_node = Node(new_nodes_value)
+        else:
+            current_node = Node(new_nodes_value)
+            self.last_node.next_node = current_node
+            self.last_node = current_node
 
+    #def get(self, node_number):
+    #    for index in range(node_number + 1):
+            #my_nodes_value = my_nodes_value.next_node
+    #    return my_nodes_value
 
 
 #element1 = Node(5)
