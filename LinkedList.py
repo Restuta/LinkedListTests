@@ -18,14 +18,19 @@ class Node:
 class LinkedList:
     last_node = None
     first_node = None
+
+    def __repr__(self):
+        return 'first elemnt in list is %s' % self.first_node
+
     def add(self, new_nodes_value):
         if self.last_node is None:
             self.last_node = Node(new_nodes_value)
-            self.first_node = Node(new_nodes_value)
+            self.first_node = self.last_node
         else:
             current_node = Node(new_nodes_value)
             self.last_node.next_node = current_node
             self.last_node = current_node
+
 
     def get(self, node_number):
         current_node = self.first_node
@@ -35,8 +40,17 @@ class LinkedList:
         return current_node
 
 
-#element1 = Node(5)
-#print(element1)
+# elements_list = LinkedList()
+# elements_list.add('barabashka')
+# elements_list.add('kukushka')
+#
+# print(elements_list.last_node)
+#
+#
+# #print(elements_list)
+# second = elements_list.get(1)
+#print(second)
+
 #element2 = Node(6, element1)
 #print(element2, element2.next_element)
 
