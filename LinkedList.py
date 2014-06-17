@@ -27,10 +27,12 @@ class LinkedList:
             self.last_node.next_node = current_node
             self.last_node = current_node
 
-    #def get(self, node_number):
-    #    for index in range(node_number + 1):
-            #my_nodes_value = my_nodes_value.next_node
-    #    return my_nodes_value
+    def get(self, node_number):
+        current_node = self.first_node
+        if node_number > 0:
+            for index in range(1, node_number + 1):
+                current_node = current_node.next_node
+        return current_node
 
 
 #element1 = Node(5)
