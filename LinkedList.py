@@ -27,6 +27,7 @@ class LinkedList:
         if self.last_node is None:
             self.last_node = Node(new_nodes_value)
             self.first_node = self.last_node
+            self.count = 1
         else:
             current_node = Node(new_nodes_value)
             self.last_node.next_node = current_node
