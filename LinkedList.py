@@ -4,7 +4,7 @@
 #add element to the end of list
 #delete element by index
 #insert element
-#fined element
+#find element
 
 
 class Node:
@@ -39,18 +39,7 @@ class LinkedList:
                 current_node = current_node.next_node
         return current_node
 
+    def get_last(self):
+        return self.last_node
 
-# elements_list = LinkedList()
-# elements_list.add('barabashka')
-# elements_list.add('kukushka')
-#
-# print(elements_list.last_node)
-#
-#
-# #print(elements_list)
-# second = elements_list.get(1)
-#print(second)
-
-#element2 = Node(6, element1)
-#print(element2, element2.next_element)
 
