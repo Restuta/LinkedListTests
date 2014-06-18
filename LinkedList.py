@@ -32,6 +32,7 @@ class LinkedList:
             current_node = Node(new_nodes_value)
             self.last_node.next_node = current_node
             self.last_node = current_node
+            self.count += 1
 
 
     def get(self, node_number):
