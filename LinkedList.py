@@ -45,4 +45,10 @@ class LinkedList:
     def get_last(self):
         return self.last_node
 
+    def get_first(self):
+        return self.first_node
+
+
+
+
 
