@@ -62,7 +62,7 @@ class add_get_tests(unittest.TestCase):
         linked_list.add('test item 1')
         linked_list.add('test item 2')
         linked_list.add('test item 3')
-        last_node = linked_list.get(linked_list.count - 1)
+        last_node = linked_list.get(3)
         self.assertEqual(last_node.value, 'test item 3')
 
 
