@@ -52,6 +52,8 @@ class LinkedList:
         before_removed_node = self.get(removed_node_number - 1)
         before_removed_node.next_node = self.get(removed_node_number + 1)
         self.count -= 1
+        if self.count == 0:
+            self.first_node = None
         pass
 
 
