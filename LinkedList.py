@@ -48,6 +48,11 @@ class LinkedList:
     def get_first(self):
         return self.first_node
 
+    def remove(self, removed_node_number):
+        before_removed_node = self.get(removed_node_number - 1)
+        before_removed_node.next_node = self.get(removed_node_number + 1)
+        self.count -= 1
+        pass
 
 
 
