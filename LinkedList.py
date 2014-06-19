@@ -49,17 +49,16 @@ class LinkedList:
         return self.first_node
 
     def remove(self, removed_node_number):
-        before_removed_node = self.get(removed_node_number - 1)
+        node_before_removed_node = self.get(removed_node_number - 1)
         if removed_node_number == self.count - 1:
-            before_removed_node.next_node = None
-            self.last_node = before_removed_node
+            node_before_removed_node.next_node = None
+            self.last_node = node_before_removed_node
         else:
-            before_removed_node.next_node = self.get(removed_node_number + 1)
+            node_before_removed_node.next_node = self.get(removed_node_number + 1)
         self.count -= 1
         if self.count == 0:
             self.first_node = None
             self.last_node = None
-        pass
 
 
 
