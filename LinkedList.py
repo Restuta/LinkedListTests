@@ -54,6 +54,7 @@ class LinkedList:
         self.count -= 1
         if self.count == 0:
             self.first_node = None
+            self.last_node = None
         pass
 
 
