@@ -19,6 +19,7 @@ class LinkedList:
     last_node = None
     first_node = None
     count = 0
+    has_loops = False
 
     def __repr__(self):
         return 'first element in list is %s' % self.first_node
