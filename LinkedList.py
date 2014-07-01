@@ -19,9 +19,10 @@ class LinkedList:
     last_node = None
     first_node = None
     count = 0
+    has_loops = False
 
     def __repr__(self):
-        return 'first elemnt in list is %s' % self.first_node
+        return 'first element in list is %s' % self.first_node
 
     def add(self, new_nodes_value):
         if self.last_node is None:

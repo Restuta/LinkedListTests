@@ -143,5 +143,38 @@ class remove_tests(unittest.TestCase):
         self.assertIsNone(linked_list.get_last())
 
 
+class cycles_tests(unittest.TestCase):
+
+    def test_when_there_are_no_loops_should_find_none(self):
+        linked_list = LinkedList()
+        linked_list.add('test item 0')
+        linked_list.add('test item 1')
+
+        self.assertFalse(linked_list.has_loops)
+
+    def test_when_there_are_two_items_added_to_list_that_point_to_each_other_should_report_it_as_a_cycle(self):
+        linked_list = LinkedList()
+        linked_list.add('test item 0')
+        linked_list.add('test item 1')
+        node0 = linked_list.get(0)
+        node1 = linked_list.get(1)
+        node1.next_node = node0
+
+        self.assertTrue(linked_list.has_loops)
+
+    def test_when_there_is_a_loop_in_the_middle_of_the_list_should_be_able_to_report_it(self):
+        linked_list = LinkedList()
+        linked_list.add('test item 0')
+        linked_list.add('test item 1')
+        linked_list.add('test item 2')
+        linked_list.add('test item 3')
+        linked_list.add('test item 4')
+
+        node1 = linked_list.get(1)
+        node3 = linked_list.get(3)
+        node3.next_node = node1
+
+        self.assertTrue(linked_list.has_loops)
+
 if __name__ == '__main__':
     unittest.main()
