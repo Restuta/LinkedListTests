@@ -160,7 +160,7 @@ class cycles_tests(unittest.TestCase):
         node1 = linked_list.get(1)
         node1.next_node = node0
 
-        self.assertTrue(linked_list.has_loops)
+        self.assertTrue(linked_list.has_loop())
 
     def test_when_there_is_a_loop_in_the_middle_of_the_list_should_be_able_to_report_it(self):
         linked_list = LinkedList()
@@ -174,7 +174,7 @@ class cycles_tests(unittest.TestCase):
         node3 = linked_list.get(3)
         node3.next_node = node1
 
-        self.assertTrue(linked_list.has_loops)
+        self.assertTrue(linked_list.has_loop())
 
 if __name__ == '__main__':
     unittest.main()
