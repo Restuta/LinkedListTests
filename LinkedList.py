@@ -24,6 +24,24 @@ class LinkedList:
     def __repr__(self):
         return 'first element in list is %s' % self.first_node
 
+    def has_loop(self):
+        if self.count < 2:
+            self.has_loops = False
+        else:
+            current_node = self.first_node
+            for index in range (self.count):
+                if current_node is self.last_node:
+                    if index is not (self.count - 1):
+                        self.has_loops = True
+                else:
+                    if index is (self.count - 1):
+                        self.has_loops = True
+        if self.last_node.next_node is not None:
+            self.has_loops = True
+        return self.has_loops
+
+
+
     def add(self, new_nodes_value):
         if self.last_node is None:
             self.last_node = Node(new_nodes_value)
